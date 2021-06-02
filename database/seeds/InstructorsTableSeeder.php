@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Role;
@@ -12,9 +13,9 @@ class InstructorsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 20)->create()->each(function ($u) {
+        \App\User::factory()->count(20)->create()->each(function ($u) {
             $role_id = Role::where('name', '=', 'instructor')->pluck('id')->first();
-            $u->attachRole($role_id);
+            $u->assignRole($role_id);
         });
     }
 }

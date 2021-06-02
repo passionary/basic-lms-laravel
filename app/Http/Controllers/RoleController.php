@@ -87,7 +87,7 @@ class RoleController extends Controller
         $hep_permissions = $permissions['hep'];
         $lep_permissions = $permissions['lep'];
         $other_permissions = $permissions['other'];
-        $role_permissions = $role->perms()->pluck('id', 'id')->toArray();
+        $role_permissions = $role->permissions()->pluck('id', 'id')->toArray();
         return view('admin.role.edit', compact(['role', 'role_permissions', 'security_permissions', 'hep_permissions', 'lep_permissions', 'other_permissions']));
     }
 
@@ -106,10 +106,10 @@ class RoleController extends Controller
         $role->description = $request->description;
         $role->save();
 
-        DB::table('permission_role')->where('role_id', $id)->delete();
+        DB::table('role_has_permissions')->where('role_id', $id)->delete();
 
         foreach ($request->permission as $key => $value) {
-            $role->attachPermission($value);
+            $role->givePermissionTo($value);
         }
 
         return redirect()->route('role.index')->withMessage('Role Updated');

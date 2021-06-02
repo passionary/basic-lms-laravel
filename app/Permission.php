@@ -2,10 +2,13 @@
 
 namespace App;
 
-use Zizaco\Entrust\EntrustPermission;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Permission\Models\Permission as PermissionBase;
 
-class Permission extends EntrustPermission
+class Permission extends PermissionBase
 {
+    use HasFactory;
+    
     protected $fillable =
         ['name', 'description', 'display_name'];
 }

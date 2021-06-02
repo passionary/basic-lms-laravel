@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Role;
@@ -41,10 +42,10 @@ class RoleTableSeeder extends Seeder
             ],
         ];
         foreach ($roles as $key => $value) {
-            $role = Role::create($value);
+            $role = Role::firstOrCreate($value);
             if ($role->name == 'superuser') {
-                $permissions = Permission::where('category', '=', 'security')->get()->toArray();
-                $role->attachPermissions($permissions);
+                $permissions = Permission::where('category', '=', 'security')->get();
+                $role->givePermissionTo($permissions);
             }
         }
     }

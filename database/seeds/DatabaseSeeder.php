@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
@@ -22,6 +23,5 @@ class DatabaseSeeder extends Seeder
         $this->call(StudentsTableSeeder::class);
         $this->call(CodingLanguagesSeeder::class);
         $this->call(JudgeConstraintsTableSeeder::class);
-
     }
 }

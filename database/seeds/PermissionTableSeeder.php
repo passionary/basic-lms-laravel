@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Permission;
@@ -184,7 +185,7 @@ class PermissionTableSeeder extends Seeder
         ];
 
         foreach ($permissions as $key => $value) {
-            Permission::create($value);
+            Permission::firstOrCreate($value);
         }
     }
 }

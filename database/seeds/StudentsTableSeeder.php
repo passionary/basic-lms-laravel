@@ -1,7 +1,9 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use Illuminate\Support\Str;
 
 class StudentsTableSeeder extends Seeder
 {
@@ -12,10 +14,10 @@ class StudentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 20)->create()->each(function ($u) {
+        \App\User::factory()->count(20)->create()->each(function ($u) {
             $role_id = Role::where('name', '=', 'student')->pluck('id')->first();
-            $u->attachRole($role_id);
-            $u->college_id = str_random(10);
+            $u->assignRole($role_id);
+            $u->college_id = Str::random(10);
             $u->save();
         });
     }

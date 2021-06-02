@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Role;
@@ -13,10 +14,10 @@ class SuperUserTableSeeder extends Seeder
     public function run()
     {
 
-        factory(App\User::class, 2)->create()->each(function ($u) {
-            $role_id = Role::where('name', '=', 'superuser')->pluck('id')->first();
+        \App\User::factory()->create()->each(function ($u) {
+            $role_id = Role::where('name', '=', 'superuser')->first();
 
-            $u->attachRole($role_id);
+            $u->assignRole($role_id);
         });
     }
 }

@@ -1,7 +1,9 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Url;
+use Illuminate\Support\Str;
 
 class SecurityURLSeeder extends Seeder
 {
@@ -12,7 +14,7 @@ class SecurityURLSeeder extends Seeder
      */
     public function run()
     {
-        $url = str_random(250);
+        $url = Str::random(250);
         Url::create(['url' => $url]);
     }
 }
