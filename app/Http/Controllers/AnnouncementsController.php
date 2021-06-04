@@ -16,7 +16,7 @@ class AnnouncementsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:add-announcement', ['only' => 'create', 'store']);
+        $this->middleware('permission_via_role:add-announcement', ['only' => 'create', 'store']);
     }
 
     /**

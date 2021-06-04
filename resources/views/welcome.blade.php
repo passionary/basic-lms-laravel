@@ -271,7 +271,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FCI-H Module</title>
+    <title>School Skills</title>
     <link rel="stylesheet" href="{{ asset('welcome/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
@@ -390,7 +390,7 @@
         <div id="home" class="header-cell"
              style="height:667px;">
             <h1 style="font-family:'Rajdhani', sans-serif; letter-spacing: 2px;"><span
-                        style="color: #0EBCF3;">FCI-H</span> Learning management System</h1>
+                        style="color: #0EBCF3;">School Skills</span> Learning Management System</h1>
             <p style="font-family:'Rajdhani', sans-serif; font-size: 20px;">Easy Communication Between Instructors and
                 Students which allaws them to make and participate in Courses, create and solve Quizzes with amazing
                 Features, Let's see them ...</p>

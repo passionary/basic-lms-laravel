@@ -44,7 +44,7 @@
                             <td>
                                 <a href="{{ route('questions.show',[encrypt($question->id)]) }}"
                                    class="btn btn-xs btn-primary">@lang('module.view')</a>
-                                @if(Auth::user()->can('edit-quiz'))
+                                @if(Auth::user()->canViaRole('edit-quiz'))
                                     <a href="{{ route('questions.edit',[encrypt($question->id)]) }}"
                                        class="btn btn-xs btn-info {{ $available ? 'disabled' : ''}}">@lang('module.edit')</a>
                                 @endif

@@ -21,7 +21,7 @@ class ProblemController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('role:instructor');
+        $this->middleware('role:instructor|superuser');
     }
 
     /**

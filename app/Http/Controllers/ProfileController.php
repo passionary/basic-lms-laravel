@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:edit-profile', ['only' => ['update', 'update_image']]);
+        $this->middleware('permission_via_role:edit-profile', ['only' => ['update', 'update_image']]);
     }
 
     /**

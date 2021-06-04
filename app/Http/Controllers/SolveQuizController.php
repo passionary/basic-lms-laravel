@@ -20,7 +20,7 @@ class SolveQuizController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:solve-quiz', ['only' => 'store']);
+        $this->middleware('permission_via_role:solve-quiz', ['only' => 'store']);
     }
 
     /**

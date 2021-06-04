@@ -26,7 +26,6 @@ class Quiz extends Model
 
     public static function isAvailable($start, $end)
     {
-        date_default_timezone_set('Africa/Cairo');
         $QzStart = date("Y-m-d H:i:s", strtotime($start));
         $QzEnd = date("Y-m-d H:i:s", strtotime($end));
         $Now = Carbon::now();
@@ -39,7 +38,6 @@ class Quiz extends Model
 
     public static function hasFinished($end)
     {
-        date_default_timezone_set('Africa/Cairo');
         $QzEnd = date("Y-m-d H:i:s", strtotime($end));
         $Now = Carbon::now();
         return $Now < $QzEnd ? false : true;

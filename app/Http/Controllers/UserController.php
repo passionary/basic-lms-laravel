@@ -13,8 +13,8 @@ class UserController extends Controller
     function __construct()
     {
         $this->middleware('correct_answers');
-        $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:role-read', ['only' => 'index']);
+        $this->middleware('permission_via_role:role-edit', ['only' => ['edit','update']]);
+        $this->middleware('permission_via_role:role-read', ['only' => 'index']);
     }
 
     /**

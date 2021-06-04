@@ -15,7 +15,7 @@ class QuestionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:create-quiz');
+        $this->middleware('permission_via_role:create-quiz');
     }
 
     /**

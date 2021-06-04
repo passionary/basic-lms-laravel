@@ -16,10 +16,10 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:create-course|join-course', ['only' => ['index']]);
-        $this->middleware('permission:create-course', ['only' => ['create', 'store']]);
-        $this->middleware('permission:drop-course', ['only' => ['destroy']]);
-        $this->middleware('permission:edit-course', ['only' => ['edit']]);
+        $this->middleware('permission_via_role:create-course|join-course', ['only' => ['index']]);
+        $this->middleware('permission_via_role:create-course', ['only' => ['create', 'store']]);
+        $this->middleware('permission_via_role:drop-course', ['only' => ['destroy']]);
+        $this->middleware('permission_via_role:edit-course', ['only' => ['edit']]);
     }
 
     /**

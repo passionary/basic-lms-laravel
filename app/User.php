@@ -29,6 +29,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function canViaRole($permission)
+    {
+        $permissions = $this->getPermissionsViaRoles()->pluck('name')->toArray();
+        error_log(json_encode($permissions));
+        error_log($permission . ' permission');
+        error_log(in_array($permission, $permissions) . ' can');
+
+        if(in_array($permission, $permissions)) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function isSuperuser()
     {
         foreach ($this->roles()->get() as $role) {

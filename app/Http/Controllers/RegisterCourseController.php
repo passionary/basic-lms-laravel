@@ -15,8 +15,8 @@ class RegisterCourseController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:create-course|join-course|view-course', ['only' => 'index']);
-        $this->middleware('permission:join-course', ['only' => 'store']);
+        $this->middleware('permission_via_role:create-course|join-course|view-course', ['only' => 'index']);
+        $this->middleware('permission_via_role:join-course', ['only' => 'store']);
     }
 
     /**
@@ -29,7 +29,9 @@ class RegisterCourseController extends Controller
         $enrolled_courses = Course::select('id')->whereHas('users', function ($q) {
             return $q->where('user_id', '=', Auth::id());
         })->pluck('id')->toArray();
+        error_log(json_encode($enrolled_courses) . ' :Courses');        
         $available_courses = Course::all()->load('users')->whereNotIn('id', $enrolled_courses);
+        error_log(json_encode($available_courses) . ' :Available Courses');
         $colors = ['#4CAF50', '#2196F3', '#ff9800', '#f44336', '#e7e7e7'];
         return view('student.courses.enroll', compact('available_courses', 'colors'));
     }

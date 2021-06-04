@@ -11,6 +11,7 @@ use App\Http\Controllers\Traits\FileUploadTrait;
 use Illuminate\Support\Facades\DB;
 use App\Role;
 use App\Http\Controllers\MailController;
+use Illuminate\Support\Str;
 use function response;
 use function Sodium\compare;
 
@@ -24,7 +25,7 @@ class DefaultUserController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:add-students', ['only' => 'create', 'store', 'store_single']);
+        $this->middleware('permission_via_role:add-students', ['only' => 'create', 'store', 'store_single']);
     }
 
     /**
@@ -73,7 +74,7 @@ class DefaultUserController extends Controller
                     }
                 }
                 foreach ($data as $datum) {
-                    $non_encrypted_password = str_random(10);  //Random-auto-generating password of 10 digits.
+                    $non_encrypted_password = Str::random(10);  //Random-auto-generating password of 10 digits.
                     $password = Hash::make($non_encrypted_password); //Encrypting this password.
                     $this->dispatch((new SendEmailsJob($non_encrypted_password, $datum['email']))->onQueue('emails'));
                     try {
@@ -149,16 +150,16 @@ class DefaultUserController extends Controller
         $role = Role::where('name', '=', 'student')->pluck('id')->first(); //student
         $failed_to_create = array();
         try {
-            $non_encrypted_password = str_random(10);  //Random-auto-generating password of 10 digits.
+            $non_encrypted_password = Str::random(10);  //Random-auto-generating password of 10 digits.
             $password = Hash::make($non_encrypted_password); //Encrypting this password.
             $user = new User();
-            $this->dispatch((new SendEmailsJob($non_encrypted_password, $request->input('email')))->onQueue('emails'));
+            SendEmailsJob::dispatch($non_encrypted_password, $request->input('email'));
             $user_id = $user->create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
                 'password' => $password,
                 'college_id' => $request->input('college_id'),
-            ])->attachRole($role);
+            ])->assignRole($role);
         } catch (\Illuminate\Database\QueryException $e) {
             $failed_to_create[] = $request->all();
         }

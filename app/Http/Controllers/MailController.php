@@ -8,16 +8,18 @@ use App\Mail\MailTrap;
 
 class MailController extends Controller
 {
-    public static function index($password,$to){
-
-        if(Mail::send('student.mail', compact('password'), function($message)
+    public static function index($password,$to)
+    {
+        session()->put('to', $to);
+        if(Mail::send('student.mail', compact('password'), function($message) use($to)
         {
-            $message->to('TEST@GMAIL.COM');
-            $message->subject('Welcome to FCIH-MODULE');
-            $message->from('sender@domain.net');
+            $message->to($to);
+            $message->subject('Welcome to School Skills!');
+            $message->from(env('MAIL_FROM_ADDRESS'));
         })) return true;
     }
-    public function StudentView(){ // for testing view
+    public function StudentView()
+    {
         return view('student.mail');
     }
 

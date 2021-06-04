@@ -1,8 +1,7 @@
 @inject('request', 'Illuminate\Http\Request')
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-
     <noscript>
         <META HTTP-EQUIV="Refresh" CONTENT="0;URL={{route('noScript')}}">
     </noscript>
@@ -45,7 +44,7 @@
                             class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                             class="icon-bar"></span><span class="icon-bar"></span></button>
                 <a id="logo" href="{{route('home')}}" class="navbar-brand"><span class="fa fa-rocket"></span><span
-                            class="logo-text">FCI-H LMS</span><span style="display: none"
+                            class="logo-text">SS LMS</span><span style="display: none"
                                                                        class="logo-text-icon">µ</span></a></div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
                 <div class="news-update-box hidden-xs"><span
@@ -82,7 +81,7 @@
                                     src="{{asset(Auth::user()->avatar)}}" alt="" class="img-responsive img-circle"/>&nbsp;<span
                                     class="hidden-xs">{{ ucfirst(Auth::user()->name) }}</span>&nbsp;<span
                                     class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-user pull-right">
+                        <ul class="dropdown-menu dropdown-user pull-right">                            
                             <li><a href="{{ route('profile.index') }}"><i class="fa fa-user"
                                                                           aria-hidden="true"></i>@lang('module.bars.top-bar-profile')
                                 </a></li>
@@ -123,7 +122,7 @@
                                     <div class="icon-bg bg-green"></div>
                                 </i><span class="menu-title">@lang('module.bars.sidebar_security_questions')</span></a>
                         </li>
-                    @else
+                    @endif
 
                         <li class="{{ $request->segment(1) == 'dashboard' ? 'active' : '' }}"><a
                                     href="{{ route('home') }}"><i
@@ -173,7 +172,7 @@
 
                             </li>
                         @endif
-                        @if(Auth::user()->can('add-students'))
+                        <!-- @if(Auth::user()->can('add-students')) -->
                             <li class="{{ $request->segment(1) == 'users' ? 'active' : '' }}"><a
                                         href="{{route('users.create')}}"><i
                                             class="fa fa-users fa-fw">
@@ -181,7 +180,7 @@
                                     </i><span class="menu-title">@lang('module.bars.sidebar_users')</span></a>
 
                             </li>
-                        @endif
+                        <!-- @endif -->
 
                         @if(Auth::user()->isStudent())
                             <li class="{{ $request->segment(1) == 'results' ? 'active' : '' }}"><a
@@ -201,48 +200,19 @@
 
                             </li>
                         @endif
+                        <li class="{{ $request->segment(1) == 'submissions' ? 'active' : '' }}"><a
+                                    href="{{ route('submissions.index') }}"><i
+                                        class="fa fa-database fa-fw">
+                                    <div class="icon-bg bg-red"></div>
+                                </i><span class="menu-title">@lang('module.bars.sidebar_submissions')</span></a>
 
-                    @endif
-                    <li class="{{ $request->segment(1) == 'submissions' ? 'active' : '' }}"><a
-                                href="{{ route('submissions.index') }}"><i
-                                    class="fa fa-database fa-fw">
-                                <div class="icon-bg bg-red"></div>
-                            </i><span class="menu-title">@lang('module.bars.sidebar_submissions')</span></a>
+                        </li>
+                        <li class="{{ $request->segment(1) == 'plagiarism' ? 'active' : '' }}"><a
+                                    href="{{route('plagiarism')}}"><i
+                                        class="fa fa-files-o" aria-hidden="true"></i><span
+                                        class="menu-title">@lang('module.bars.sidebar_plagiarism')</span></a>
 
-                    </li>
-                    <li class="{{ $request->segment(1) == 'plagiarism' ? 'active' : '' }}"><a
-                                href="{{route('plagiarism')}}"><i
-                                    class="fa fa-files-o" aria-hidden="true"></i><span
-                                    class="menu-title">@lang('module.bars.sidebar_plagiarism')</span></a>
-
-                    </li>
-                    <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}"><a
-                                href="{{route('under_construction')}}"><i
-                                    class="fa fa-bar-chart-o fa-fw">
-                                <div class="icon-bg bg-orange"></div>
-                            </i><span class="menu-title">Charts</span></a>
-
-                    </li>
-                    <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}"><a
-                                href="{{route('under_construction')}}"><i
-                                    class="fa fa-gift fa-fw">
-                                <div class="icon-bg bg-grey"></div>
-                            </i><span class="menu-title">Extras</span></a>
-
-                    </li>
-                    <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}"><a
-                                href="{{route('under_construction')}}"><i
-                                    class="fa fa-envelope-o">
-                                <div class="icon-bg bg-primary"></div>
-                            </i><span class="menu-title">Email</span></a>
-
-                    </li>
-                    <li class="{{ $request->segment(1) == 'tests' ? 'active' : '' }}"><a
-                                href="{{route('under_construction')}}"><i
-                                    class="fa fa-slack fa-fw">
-                                <div class="icon-bg bg-green"></div>
-                            </i><span class="menu-title">Slack</span></a></li>
-
+                        </li>
                 </ul>
             </div>
         </nav>
@@ -288,7 +258,6 @@
                     <div class="col-xs-12">
                         <div class="col-sm-8">
                             <div class="copyright">
-                                <a href="#">@lang('module.copyright')</a>
                             </div>
                         </div>
                         <div class="col-sm-4">

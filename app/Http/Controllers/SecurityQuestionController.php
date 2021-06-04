@@ -12,10 +12,10 @@ class SecurityQuestionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:security-questions-create', ['only' => 'create']);
-        $this->middleware('permission:security-questions-edit', ['only' => 'edit']);
-        $this->middleware('permission:security-questions-delete', ['only' => 'destroy']);
-        $this->middleware('permission:security-questions-read', ['only' => 'index']);
+        $this->middleware('permission_via_role:security-questions-create', ['only' => 'create']);
+        $this->middleware('permission_via_role:security-questions-edit', ['only' => 'edit']);
+        $this->middleware('permission_via_role:security-questions-delete', ['only' => 'destroy']);
+        $this->middleware('permission_via_role:security-questions-read', ['only' => 'index']);
     }
 
     /**

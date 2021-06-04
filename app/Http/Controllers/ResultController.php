@@ -16,7 +16,7 @@ class ResultController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:solve-quiz', ['only' => 'index', 'show']);
+        $this->middleware('permission_via_role:solve-quiz', ['only' => 'index', 'show']);
     }
 
     /**

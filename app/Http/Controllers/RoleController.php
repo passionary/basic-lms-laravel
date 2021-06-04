@@ -17,10 +17,10 @@ class RoleController extends Controller
     function __construct()
     {
         $this->middleware('correct_answers');
-        $this->middleware('permission:role-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:role-read', ['only' => 'index']);
-        $this->middleware('permission:role-create', ['only' => 'edit']);
-        $this->middleware('permission:role-delete', ['only' => 'destroy']);
+        $this->middleware('permission_via_role:role-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission_via_role:role-read', ['only' => 'index']);
+        $this->middleware('permission_via_role:role-create', ['only' => 'edit']);
+        $this->middleware('permission_via_role:role-delete', ['only' => 'destroy']);
     }
 
     public function index()

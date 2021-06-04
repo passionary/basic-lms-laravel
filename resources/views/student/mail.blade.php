@@ -285,7 +285,7 @@
                                                             <tbody>
                                                             <tr>
                                                                 <br>
-                                                                <p><h1>Hi,</h1> this an automated response from FCIH-Module!</p>
+                                                                <p><h1>Hi, {{session()->get('to')}}</h1> this an automated response from School Skills!</p>
                                                                 <td style="padding-bottom: 30px;" align="center"
                                                                     class="block padb20 padlr20">
                                                                     <div class="mktEditable"
@@ -547,7 +547,7 @@
                                                 <td height="35" width="80%" align="center" style="padding:10px 0px;"
                                                     class="padlr20">
 <span style="color:#ffffff; font-family: Open Sans, Helvetica, Arial, sans-serif; text-align:center; font-size: 12px; line-height:16px; font-weight: 300;"
-      class="apple_address">© 2017 FCIH-MODULE
+      class="apple_address">© 2021 SchoolSkills
 <br>
 
                                             </tr>

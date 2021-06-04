@@ -1,7 +1,7 @@
 <div class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
+    <div class="container-fluid">
+        <div class="row w-100">
+            <div class="col-md-5" style="padding-left: 3rem;">
                 <li>
                     {!! Form::open(['method' => 'POST', 'route' => ['lang'], 'enctype' => 'multipart/form-data'])!!}
                     <select name="locale" onchange="this.form.submit()">

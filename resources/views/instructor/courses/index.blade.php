@@ -21,7 +21,7 @@
             <p>{{ Session::get('error') }}</p>
         </div>
     @endif
-    @if(Auth::user()->isInstructor())
+    @if(Auth::user()->canViaRole('create-course'))
 
         <a href="{{route('courses.create')}}" class="btn btn-success create_btn">
             @lang('module.addnew')

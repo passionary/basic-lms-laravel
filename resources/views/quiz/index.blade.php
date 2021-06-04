@@ -80,9 +80,9 @@
                             <td>{!! $quiz->end_date !!}</td>
                             <td>{{ $quiz->created_at }}</td>
                             <td>
-                                @if(Auth::user()->can('solve-quiz'))
+                                @if(Auth::user()->canViaRole('solve-quiz'))
                                     <a href="{{ route('quizzes.show',[encrypt($quiz->id)]) }}"
-                                       class="btn btn-xs btn-primary {{ $available ? '' : 'disabled'}}">@lang('module.quizzes.solve')</a>
+                                       class="btn btn-xs btn-primary">@lang('module.quizzes.solve')</a>
                                 @endif
                                 @if(Auth::user()->can('edit-quiz'))
                                     <a href="{{ route('quizzes.edit',[encrypt($quiz->id)]) }}"

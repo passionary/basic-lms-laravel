@@ -17,12 +17,12 @@ class QuizController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('permission:create-quiz', ['only' => ['create']]);
-        $this->middleware('permission:create-quiz|solve-quiz', ['only' => ['index']]);
-        $this->middleware('permission:edit-quiz', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:show-quiz-statistics', ['only' => ['chart']]);
-        $this->middleware('permission:show-quiz-results', ['only' => ['results']]);
-        $this->middleware('permission:delete-quiz', ['only' => ['destroy']]);
+        $this->middleware('permission_via_role:create-quiz', ['only' => ['create']]);
+        $this->middleware('permission_via_role:create-quiz|solve-quiz', ['only' => ['index']]);
+        $this->middleware('permission_via_role:edit-quiz', ['only' => ['edit', 'update']]);
+        $this->middleware('permission_via_role:show-quiz-statistics', ['only' => ['chart']]);
+        $this->middleware('permission_via_role:show-quiz-results', ['only' => ['results']]);
+        $this->middleware('permission_via_role:delete-quiz', ['only' => ['destroy']]);
     }
 
     /**
@@ -72,7 +72,7 @@ class QuizController extends Controller
             'results_details_w_respect_t_time' => 'numeric|min:0|max:1',
             'plagiarism_percentage' => 'nullable|numeric|min:0|max:100',
         ]);
-        try {
+        // try {
             $time_error_count = 0;
             $date_error_count = 0;
             $start_date_explode = explode(' ', $request->input('start_date'));
@@ -102,9 +102,11 @@ class QuizController extends Controller
                     return redirect()->back()->with('failed-quiz-time-gap', '')->withInput();
                 }
             }
+            error_log($time_error_count);
             if ($time_error_count == 3) {
                 return redirect()->back()->with('failed-quiz-time', '')->withInput();
             } else {
+                error_log(json_encode($request->all()));
                 Quiz::create([
                     'course_id' => decrypt($request->input('course_title')),
                     'title' => $request->input('title'),
@@ -121,9 +123,9 @@ class QuizController extends Controller
                 ]);
                 return redirect()->route('quizzes.index')->with('success-creation', '');
             }
-        } catch (\Exception $e) {
-            return redirect()->back()->with('failed', trans('module.errors.error-saving-data'));
-        }
+        // } catch (\Exception $e) {
+            // return redirect()->back()->with('failed', trans('module.errors.error-saving-data'));
+        // }
     }
 
     /**
@@ -166,6 +168,7 @@ class QuizController extends Controller
                             $duration_modified = explode(' ', $duration);
                             $return_duration = $duration_modified[0] . 'T' . $duration_modified[1];
                         }
+                        error_log('quizzes ' . json_encode($quiz_questions));
                         return view('quiz.show', compact('id', 'solve_many', 'quiz_questions', 'quiz_problems', 'quiz', 'return_duration'));
                     } else
                         return redirect()->back()->with('0_questions', '');
