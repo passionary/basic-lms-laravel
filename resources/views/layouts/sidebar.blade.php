@@ -157,13 +157,6 @@
                             </li>
                         @endif
                         @if(Auth::user()->can('create-quiz'))
-                            <li class="{{ $request->segment(1) == 'problems' ? 'active' : '' }}"><a
-                                        href="{{route('problems.index')}}"><i
-                                            class="fa fa-code fa-fw">
-                                        <div class="icon-bg bg-violet"></div>
-                                    </i><span class="menu-title">@lang('module.bars.sidebar_problems')</span></a>
-
-                            </li>
                             <li class="{{ $request->segment(1) == 'questions' ? 'active' : '' }}"><a
                                         href="{{route('questions.index')}}"><i
                                             class="fa fa-sitemap fa-fw">
@@ -205,12 +198,6 @@
                                         class="fa fa-database fa-fw">
                                     <div class="icon-bg bg-red"></div>
                                 </i><span class="menu-title">@lang('module.bars.sidebar_submissions')</span></a>
-
-                        </li>
-                        <li class="{{ $request->segment(1) == 'plagiarism' ? 'active' : '' }}"><a
-                                    href="{{route('plagiarism')}}"><i
-                                        class="fa fa-files-o" aria-hidden="true"></i><span
-                                        class="menu-title">@lang('module.bars.sidebar_plagiarism')</span></a>
 
                         </li>
                 </ul>

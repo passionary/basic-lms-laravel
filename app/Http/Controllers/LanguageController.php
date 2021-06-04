@@ -12,12 +12,12 @@ class LanguageController extends Controller
      * LanguageController constructor.
      */
 
-    public function index()
+    public function index(Request $request)
     {
         if (!Session::has('locale')) {
-            Session::put('locale', Input::get('locale'));
+            Session::put('locale', $request->input('locale'));
         } else {
-            Session::put('locale', Input::get('locale'));
+            Session::put('locale', $request->input('locale'));
         }
         return redirect()->back();
     }

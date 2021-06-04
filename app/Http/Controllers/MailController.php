@@ -8,9 +8,9 @@ use App\Mail\MailTrap;
 
 class MailController extends Controller
 {
-    public static function index($password,$to)
+    public static function index($password, $to, $name)
     {
-        session()->put('to', $to);
+        session()->put('to', $name);
         if(Mail::send('student.mail', compact('password'), function($message) use($to)
         {
             $message->to($to);

@@ -2,7 +2,7 @@
 @section('content')
     <div style="margin-left: 25%;">
         <h1 style="font-family:'Rajdhani', sans-serif; letter-spacing: 2px;"><span
-                    style="color: #0EBCF3;">FCI-H</span> Learning management System</h1>
+                    style="color: #0EBCF3;">School Skills</span> Learning Management System</h1>
     </div>
     <div class="container">
         <div class="col-md-8 col-md-offset-2">

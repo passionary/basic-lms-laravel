@@ -90,37 +90,6 @@
                             {{ $errors->first('results_details_w_respect_t_time') }}
                         </p>
                     @endif
-                    <br>
-                    {{ Form::checkbox('activate_plagiarism',1,null, ['class' => 'field','onchange' => 'active_percentage()' ,'id' => 'activate_plagiarism']) }}
-                    {!! Form::label('activate_plagiarism',trans('module.judge_options.quiz-options.activate_plagiarism'), ['class' => 'control-label']) !!}
-                    @if($errors->has('activate_plagiarism'))
-                        <p class="help-block alert-danger">
-                            {{ $errors->first('activate_plagiarism') }}
-                        </p>
-                    @endif
-                    <br>
-                    <div class="js-hidden" id="Percentage">
-                        {!! Form::label('percentage',trans('module.quizzes.percentage'), ['class' => 'control-label'])!!}
-                        <div class="form-group">
-                            {{ Form::checkbox('share_plagiarism',1,null, ['class' => 'field','id' => 'share_plagiarism']) }}
-                            {!! Form::label('share_plagiarism',trans('module.judge_options.quiz-options.share_plagiarism'), ['class' => 'control-label']) !!}
-                            @if($errors->has('share_plagiarism'))
-                                <p class="help-block alert-danger">
-                                    {{ $errors->first('share_plagiarism') }}
-                                </p>
-                            @endif
-                            <div class="range-slider">
-                                <input class="range-slider__range" type="range" min="0" max="100"
-                                       name="plagiarism_percentage" id="plagiarism_percentage">
-                                <span class="range-slider__value">0</span>
-                            </div>
-                        </div>
-                    </div>
-                    @if($errors->has('plagiarism_percentage'))
-                        <p class="help-block alert-danger">
-                            {{ $errors->first('plagiarism_percentage') }}
-                        </p>
-                    @endif
                 </div>
             </div>
             <div class="row">

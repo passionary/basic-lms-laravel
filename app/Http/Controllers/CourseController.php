@@ -79,7 +79,7 @@ class CourseController extends Controller
             $course->users()->attach($success_instructors);
             if (count($request->allFiles()) > 0) {
 
-                foreach (Input::file("material") as $material) {
+                foreach ($request->file("material") as $material) {
                     $path = Storage::put('materials', $material);
                     $course_id = $course->id;
                     Material::create([
@@ -159,7 +159,7 @@ class CourseController extends Controller
             'description' => 'required|min:5|',
         ]);
         try {
-            $course_id = decrypt(Input::get('id'));
+            $course_id = decrypt($request->input('id'));
             $course = Course::findOrFail($course_id);
             $failed_instructors = array();
             $instructors = explode(',', $request->input('assistant_professor'));
@@ -180,7 +180,7 @@ class CourseController extends Controller
             }
             if (count($request->allFiles()) > 0) {
 
-                foreach (Input::file("material") as $material) {
+                foreach ($request->file("material") as $material) {
                     $path = Storage::put('materials', $material);
                     $course_id = $course->id;
                     Material::create([
@@ -211,6 +211,7 @@ class CourseController extends Controller
             $course = Course::findOrFail(decrypt($id));
             $course->quizzes()->delete();
             $course->delete();
+            
             return Redirect::route('courses.index');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', trans('module.errors.error-processing'));

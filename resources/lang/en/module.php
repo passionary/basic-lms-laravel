@@ -6,7 +6,7 @@
  * Time: 7:15 PM
  */
 return [
-    'copyright' => '2017 &copy; FCI - Helwan University (FCIH-LMS)',
+    'copyright' => '2017 &copy; School Skills (SS-LMS)',
     'create' => 'Create',
     'created_at' => 'Created At',
     'operations' => 'Operations',

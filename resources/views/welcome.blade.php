@@ -572,7 +572,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <h5>FCI-H Learning Management System© 2017</h5></div>
+                <h5>School Skills Learning Management System© 2021</h5></div>
         </div>
     </div>
 </footer>

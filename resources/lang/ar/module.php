@@ -6,7 +6,7 @@
  * Time: 7:15 PM
  */
 return [
-    'copyright' => '2017 &copy;  جميع الحقوق محفوظة ',
+    'copyright' => '2017 &copy;  Школьные умения(SS-LMS)',
     'create' => 'إنشاء',
     'created_at' => 'أنشئ في',
     'operations' => 'عمليات',

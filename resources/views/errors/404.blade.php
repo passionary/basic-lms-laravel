@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-10 col-xs-offset-2">
-                <h1>FCI-H Module</h1>
+                <h1>School Skills</h1>
                 <h4>You can return home by clicking the button below.</h4>
                 <a href="{{route('home')}}" class="btn btn-primary btn-sm" role="button">Return!</a>
             </div>

@@ -10,7 +10,7 @@
             <p>{{Session::get('success')}}</p>
         </div>
     @endif
-    @if(Auth::user()->can('create-quiz'))
+    @if(Auth::user()->canViaRole('create-quiz'))
         <p>
             <a href="{{route('problems.create')}}"
                class="btn btn-success create_btn {{ count($quizzes) > 0 ? '' : 'disabled' }}">

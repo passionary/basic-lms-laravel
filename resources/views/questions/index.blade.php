@@ -36,7 +36,7 @@
                 <tbody>
                 @if (count($questions) > 0)
                     @foreach ($questions as $question)
-                        {{ $available = QuizHelper::isAvailable($question->quiz->start_date, $question->quiz->end_date)}}
+                        <?php $available = QuizHelper::isAvailable($question->quiz->start_date, $question->quiz->end_date); ?>
                         <tr data-entry-id="{{ $question->id }}">
                             <td>{{ $question->quiz->course->title }}</td>
                             <td>{{ $question->quiz->title or '' }}</td>

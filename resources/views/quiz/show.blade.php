@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-xs-12 form-group">
                 <div class="col-sm-8">
-                    <iframe src="http://free.timeanddate.com/countdown/i5vpnmoi/n53/cf12/cm0/cu4/ct0/cs1/ca0/co1/cr0/ss0/cac000/cpc000/pct/tcf1d8e7/fs100/szw448/szh189/tac000/tpc000/iso{{$return_duration}}"
-                            allowTransparency="true" frameborder="0" width="160" height="38"></iframe>
+                    <iframe src="http://free.timeanddate.com/countdown/i7u3xepj/n921/cf12/cm0/cu4/ct0/cs1/ca0/co1/cr0/ss0/cac000/cpc000/pct/tcf1d8e7/fs100/szw448/szh189/tac000/tpc000/iso{{$return_duration}}"
+                            allowTransparency="true" frameborder="0" width="160" height="42"></iframe>
                 </div>
                 <div class="col-sm-4 text-red">
                     @lang('module.quizzes.caution')
@@ -43,8 +43,8 @@
                 <div class="content-theme-setting">
                     <div class="form-group">
                         <strong>
-                            <iframe src="http://free.timeanddate.com/countdown/i5vpnmoi/n53/cf12/cm0/cu4/ct0/cs1/ca0/co1/cr0/ss0/cac000/cpc000/pct/tcf1d8e7/fs100/szw448/szh189/tac000/tpc000/iso{{$return_duration}}"
-                                    allowTransparency="true" frameborder="0" width="160" height="38"></iframe>
+                            <iframe src="http://free.timeanddate.com/countdown/i7u3xepj/n921/cf12/cm0/cu4/ct0/cs1/ca0/co1/cr0/ss0/cac000/cpc000/pct/tcf1d8e7/fs100/szw448/szh189/tac000/tpc000/iso{{$return_duration}}"
+                                    allowTransparency="true" frameborder="0" width="160" height="42"></iframe>
                         </strong>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
         @endif
         @if ( count($quiz_problems) > 0)
             @foreach($quiz_problems as $problem)
-                @if(count($problem) > 0)
+                @if(count($quiz_problems) > 0)
                     @if ($i > 1)
                         <hr/>
                     @endif

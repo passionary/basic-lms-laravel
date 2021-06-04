@@ -306,8 +306,8 @@
                                                                                             align="center"
                                                                                             style="padding: 0;">
                                                                                             <a class="cta"
-                                                                                               href="http://www.google.com"
-                                                                                               style="font-family: sans-serif; background-color: #05AE69; color: #ffffff; display: inline-block; font-size: 16px; font-weight: 500; line-height: 18px; text-align: center; text-decoration: none; width: auto; -webkit-text-size-adjust: none; border: 15px solid #05AE69; border-left: 25px solid #05AE69; border-right: 25px solid #05AE69; border-radius: 2px !important;">FCIH-MODULE is waiting for you.</a></td>
+                                                                                               href="http://127.0.0.1:8000"
+                                                                                               style="font-family: sans-serif; background-color: #05AE69; color: #ffffff; display: inline-block; font-size: 16px; font-weight: 500; line-height: 18px; text-align: center; text-decoration: none; width: auto; -webkit-text-size-adjust: none; border: 15px solid #05AE69; border-left: 25px solid #05AE69; border-right: 25px solid #05AE69; border-radius: 2px !important;">School Skills is waiting for you.</a></td>
                                                                                     </tr>
                                                                                     </tbody>
                                                                                 </table>
@@ -402,7 +402,7 @@
                                                 <tr>
                                                     <td align="center" style="padding: 20px 0;">
                                                         <div class="mktEditable" id="moduleBannerHeadline"><span
-                                                                    style="font-size: 18px; line-height: 23px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #333333; font-weight: 600;">FCIH-MODULE</span>
+                                                                    style="font-size: 18px; line-height: 23px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #333333; font-weight: 600;">School Skills</span>
                                                         </div>
                                                     </td>
                                                 </tr>

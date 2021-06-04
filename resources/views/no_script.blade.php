@@ -18,7 +18,7 @@
                     <strong style="font-family: Arial">JavaScript Required</strong>
                     <hr>
                     <div class="form-group">
-                    <p>We're sorry, but FCI-H-LMS doesn't work properly without JavaScript enabled.</p>
+                    <p>We're sorry, but School Skills LMS doesn't work properly without JavaScript enabled.</p>
                     <a class="btn btn-blue" role="button" href="{{ route('home') }}">Reload
                         Page</a>
                     </div>
