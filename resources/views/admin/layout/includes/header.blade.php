@@ -7,7 +7,7 @@
                     <select name="locale" onchange="this.form.submit()">
                         <option value="en" {{ App::getLocale() == 'en' ? 'selected' : '' }}>English
                         </option>
-                        <option value="ar" {{ App::getLocale() == 'ar' ? 'selected' : ''}}>Arabic
+                        <option value="ru" {{ App::getLocale() == 'ru' ? 'selected' : ''}}>Русский
                         </option>
                     </select>
                     {{ csrf_field() }}
