@@ -11,6 +11,7 @@ return [
     'display_name' => "Отображаемое имя",
     'description' => "Описание",
     'role' => 'Роль',
+    'roles' => 'Роли',
     'permissions' => 'Разрешения',
     'bars' => [
         'sidebar_user_management' => 'Управление пользователями',

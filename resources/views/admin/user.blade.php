@@ -5,9 +5,9 @@
     <table class="table table-striped table-bordered" id="datatable">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Roles</th>
-            <th>Action</th>
+            <th>@lang('module.placeholders.name')</th>
+            <th>@lang('administration.roles')</th>
+            <th>@lang('module.operations')</th>
         </tr>
         </thead>
         <tbody>

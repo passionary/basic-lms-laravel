@@ -72,7 +72,7 @@ class QuizController extends Controller
             'results_details_w_respect_t_time' => 'numeric|min:0|max:1',
             'plagiarism_percentage' => 'nullable|numeric|min:0|max:100',
         ]);
-        // try {
+        try {
             $time_error_count = 0;
             $date_error_count = 0;
             $start_date_explode = explode(' ', $request->input('start_date'));
@@ -123,9 +123,9 @@ class QuizController extends Controller
                 ]);
                 return redirect()->route('quizzes.index')->with('success-creation', '');
             }
-        // } catch (\Exception $e) {
-            // return redirect()->back()->with('failed', trans('module.errors.error-saving-data'));
-        // }
+        } catch (\Exception $e) {
+            return redirect()->back()->with('failed', trans('module.errors.error-saving-data'));
+        }
     }
 
     /**

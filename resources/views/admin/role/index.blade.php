@@ -7,10 +7,10 @@
     <table class="table table-bordered" id="datatable">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Display Name</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th>@lang('module.placeholders.name')</th>
+            <th>@lang('administration.display_name')</th>
+            <th>@lang('administration.description')</th>
+            <th>@lang('module.operations')</th>
         </tr>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
                         <div class="col-xs-3 text-left">
                                 <a class="btn btn-info btn-sm" href="{{route('role.edit',$role->id)}}">@lang('module.edit')</a>
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-4 col-xs-offset-1">
                                 <form action="{{route('role.destroy',$role->id)}}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}

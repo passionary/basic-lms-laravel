@@ -232,7 +232,7 @@
                 <div id="tab-general">
                     <div id="sum_box" class="row mbl">
                         <!--Content-->
-                        <div class="container-fluid" dir="{{ App::getLocale() == 'en' ? 'ltr' : 'rtl' }}">
+                        <div class="container-fluid">
                             @yield('content')
                         </div>
                     </div>

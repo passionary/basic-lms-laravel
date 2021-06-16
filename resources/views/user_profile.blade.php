@@ -61,12 +61,6 @@
                                             <td><span class="label label-success">Active</span></td>
                                         </tr>
                                         <tr>
-                                            <td>@lang('module.profiles.code_forces_handle')</td>
-                                            <td>
-                                                <span class="label label-warning">{{$user->cf_handle or 'Not available'}}</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td>@lang('module.profiles.member_since')</td>
                                             <td>{{$user->created_at}}</td>
                                         </tr>

@@ -12,6 +12,7 @@ return [
     'display_name' => "Display Name",
     'description' => "Description",
     'role' => 'Role.',
+    'roles' => 'Roles',
     'permissions' => 'Permissions',
     'bars' => [
         'sidebar_user_management' => 'User Management.',

@@ -491,17 +491,7 @@
                 <hr>
                 <ul>
                     <li>
-                        Professor/ Insaf Huessain
-                    </li>
-                    <li>
-                        <a href="http://www.fcih.net/ghada/" target="_blank">Assistant Professor/ Ghada Khoriba.</a>
-                    </li>
-
-                    <li>
-                        Assistant Lecturer/ Ahmed Farrag
-                    </li>
-                    <li>
-                        Teaching Assistant/ Wael Eid
+                        Aldiyar Amanbaev
                     </li>
                 </ul>
             </div>

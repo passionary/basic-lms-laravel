@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-        ])->attachRole($role);
+        ])->assignRole($role);
     }
 
     public function register(Request $request)

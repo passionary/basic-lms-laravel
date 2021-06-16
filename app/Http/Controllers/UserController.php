@@ -83,10 +83,10 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $roles = $request->roles;
-        DB::table('role_user')->where('user_id', $id)->delete();
+        DB::table('model_has_roles')->where('model_type', 'App\User')->where('model_id', $id)->delete();
 
         foreach ($roles as $role) {
-            $user->attachRole($role);
+            $user->assignRole($role);
         }
 
         return back()->withMessage('Updated');

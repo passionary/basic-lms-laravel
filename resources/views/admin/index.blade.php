@@ -1,4 +1,4 @@
 @extends('admin.layout.admin')
 @section('content')
-    <h3>Administration Panel</h3>
+    <h3>@lang('module.admin.panel')</h3>
 @endsection

@@ -101,7 +101,7 @@
         </div>
 
     </div>
-    <div class="panel panel-green">
+    <!-- <div class="panel panel-green">
         <div class="panel-heading">
             @lang('module.users.new-users-excel')
         </div>
@@ -129,7 +129,7 @@
             </div>
             {!! Form::close() !!}
         </div>
-    </div>
+    </div> -->
 @endsection
 @section('scripts')
     <script type="text/javascript">

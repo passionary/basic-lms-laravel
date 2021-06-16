@@ -18,7 +18,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="{{route('admin.index',$valid_url)}}">Administration</a></h1>
+                    <h1><a href="{{route('admin.index',$valid_url)}}">@lang('module.admin.admin')</a></h1>
                 </div>
             </div>
 
