@@ -159,6 +159,13 @@ return [
         'sidebar_construction' => 'Под конструкцией',
         'sidebar_plagiarism' => 'Плагиатство',
     ],
+    'roles' => [
+        'superuser' => 'Супер пользователь',
+        'standard-user' => 'Стандартный пользователь',
+        'instructor' => 'Инструктор',
+        'student' => 'Студент',
+        'guest' => 'Гость'
+    ],
     'problems' => [
         'problems-list' => 'Список проблем',
         'problem-name' => 'Название проблемы',

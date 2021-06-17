@@ -332,8 +332,17 @@ return [
         'success' => 'Announcement added successfully',
         'deleted' => 'Announcement deleted successfully'
     ],
+    'roles' => [
+        'superuser' => 'Superuser',
+        'standard-user' => 'Standard Superuser',
+        'instructor' => 'Instructor',
+        'student' => 'Student',
+        'guest' => 'Guest'
+    ],
     'admin' => [
+        'admin' => 'Administration',
         'security-questions' => 'Security Questions',
+        'panel' => 'Administration panel',
         'caption' => 'Please answer the following questions to login as admin',
         'answer' => 'Your answer...',
         'answer-note' => 'Please answer the following questions to access your privileges!',

@@ -17,7 +17,7 @@
         @forelse($roles as $role)
             <tr>
                 <td>{{$role->name}}</td>
-                <td>{{$role->display_name}}</td>
+                <td>@lang('module.roles.' . $role->name)</td>
                 <td>{{$role->description}}</td>
                 <td>
                     <div class="row"><!-- panel-footer -->
